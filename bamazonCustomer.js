@@ -77,6 +77,38 @@ function promptUser() {
 
 
         console.log(answers.ID, answers.units);
+
+        connection.query("SELECT stock_quantity FROM products WHERE item_id = " + answers.ID, function(error, results, fields) {
+        
+            if (error) {
+
+                console.log(error);
+
+                return;
+            }
+
+            else {
+
+
+                console.log(results);
+
+                if (results[0].stock_quantity >= answers.units) {
+
+
+                }
+
+                else {
+
+                    console.log("Insufficient quantity!");
+                }
+            }
+
+            
+        
+        
+        });
+
+        });
     });
 
     connection.end();
