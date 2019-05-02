@@ -25,11 +25,11 @@ connection.connect(function (err) {
         return;
     }
 
-    console.log("connected");
-
     showAllItems();
 
     promptUser();
+
+    //connection.end();
 });
 
 function showAllItems() {
@@ -46,11 +46,11 @@ function showAllItems() {
         }
 
         for (let i = 0; i < results.length; i++) {
-        
-        console.log(results[i].item_id, results[i].product_name, "$" + results[i].price);
+
+            console.log(results[i].item_id, results[i].product_name, "$" + results[i].price);
 
         };
-        
+
     })
 
 };
@@ -62,55 +62,90 @@ function promptUser() {
     inquirer.prompt([{
         type: "input",
         name: "ID",
-        message: "What is the ID of the product you would like to buy?"
+        message: "What is the ID of the product you would like to buy?",
+        validate: function (value) {
+            if (isNaN(value) === false) {
+                return true;
+            }
+            return false;
+        }
 
-
-
-        //validate:
     }, {
 
         type: "input",
         name: "units",
-        message: "How many units of the product would you like to buy?"
-    }])
-    .then(answers => {
-
-
-        console.log(answers.ID, answers.units);
-
-        connection.query("SELECT stock_quantity FROM products WHERE item_id = " + answers.ID, function(error, results, fields) {
-        
-            if (error) {
-
-                console.log(error);
-
-                return;
+        message: "How many units of the product would you like to buy?",
+        validate: function (value) {
+            if (isNaN(value) === false) {
+                return true;
             }
+            return false;
+        }
+    }])
+        .then(answers => {
 
-            else {
+            connection.query("SELECT stock_quantity FROM products WHERE item_id = " + answers.ID, function (error, results, fields) {
 
+                if (error) {
 
-                console.log(results);
+                    console.log(error);
 
-                if (results[0].stock_quantity >= answers.units) {
-
-
+                    return;
                 }
 
                 else {
 
-                    console.log("Insufficient quantity!");
+                    if (results[0].stock_quantity >= answers.units) {
+
+                        let remainingQuantity = results[0].stock_quantity - answers.units;
+
+                        connection.query("UPDATE products SET stock_quantity = " + remainingQuantity, function (error, results, fields) {
+
+
+                            if (error) {
+
+                                console.log(error);
+                                return;
+                            }
+
+                            else {
+
+                                connection.query("SELECT price FROM products WHERE item_id = " + answers.ID, function (error, results, fields) {
+
+
+                                    if (error) {
+
+                                        console.log(error);
+                                        return;
+                                    }
+
+                                    else {
+
+                                        console.log("Total cost of your purchase: $" + (results[0].price * answers.units))
+                                    }
+
+
+
+                                })
+
+                            }
+
+                        })
+
+                    }
+
+                    else {
+
+                        console.log("Insufficient quantity!");
+                    }
                 }
-            }
 
-            
-        
-        
+
+
+
+            });
+
         });
 
-        });
-    });
-
-    connection.end();
 }
 
