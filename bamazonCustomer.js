@@ -29,7 +29,6 @@ connection.connect(function (err) {
 
     promptUser();
 
-    //connection.end();
 });
 
 function showAllItems() {
@@ -122,6 +121,7 @@ function promptUser() {
                                     else {
 
                                         console.log("Total cost of your purchase: $" + (results[0].price * answers.units))
+                                        connection.end();
                                     }
 
 
@@ -137,6 +137,7 @@ function promptUser() {
                     else {
 
                         console.log("Insufficient quantity!");
+                        connection.end();
                     }
                 }
 
