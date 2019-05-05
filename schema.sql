@@ -27,16 +27,16 @@ INSERT INTO products(product_name, department_name, price, stock_quantity)
 VALUES("sneakers", "shoes", 30.00, 200);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUES("tanktop", "clothing", 20.00, 150);
+VALUES("tanktops", "clothing", 20.00, 150);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
 VALUES("jeans", "clothing", 40.00, 150);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUES("purse", "fashion accessories", 50.00, 250);
+VALUES("purses", "fashion accessories", 50.00, 250);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUES("pearl necklace", "fashion accessories", 100.00, 150);
+VALUES("pearl necklaces", "fashion accessories", 100.00, 150);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
 VALUES("diamond earrings", "fashion accessories", 200.00, 150);
@@ -48,6 +48,6 @@ INSERT INTO products(product_name, department_name, price, stock_quantity)
 VALUES("platform shoes", "shoes", 50.00, 150);
 
 INSERT INTO products(product_name, department_name, price, stock_quantity)
-VALUES("striped t-shirt", "clothing", 20.00, 150);
+VALUES("striped t-shirts", "clothing", 20.00, 150);
 
 SELECT * FROM products;

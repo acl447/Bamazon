@@ -83,7 +83,9 @@ function promptUser() {
     }])
         .then(answers => {
 
-            connection.query("SELECT stock_quantity FROM products WHERE item_id = " + answers.ID, function (error, results, fields) {
+            let chosenProductID = answers.ID;
+
+            connection.query("SELECT stock_quantity FROM products WHERE item_id = " + chosenProductID, function (error, results, fields) {
 
                 if (error) {
 
