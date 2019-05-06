@@ -33,9 +33,10 @@ If you select "View Low Inventory", you will see a list of all items with an inv
 
 If you select "Add to Inventory", follow the prompts to add more of any item currently in the store:
 
-<img width="739" alt="Screen Shot 2019-05-06 at 12 16 57 PM" src="https://user-images.githubusercontent.com/44036798/57249098-ea00bc00-6ff8-11e9-82b3-fe36e19c7d91.png">
 
-<img width="772" alt="Screen Shot 2019-05-06 at 12 18 44 PM" src="https://user-images.githubusercontent.com/44036798/57249190-26341c80-6ff9-11e9-908d-e20e1d0bf511.png">
+<img width="628" alt="Screen Shot 2019-05-06 at 12 28 16 PM" src="https://user-images.githubusercontent.com/44036798/57249751-a313c600-6ffa-11e9-8f79-b98d8a77474d.png">
+
+<img width="695" alt="Screen Shot 2019-05-06 at 12 29 02 PM" src="https://user-images.githubusercontent.com/44036798/57249797-b7f05980-6ffa-11e9-9735-63eaa6f5f61b.png">
 
 If you select "Add New Product", follow the prompts to add a completely new product to the store:
 

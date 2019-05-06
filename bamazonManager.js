@@ -149,8 +149,6 @@ function addToInventory() {
     })
         .then(answers => {
 
-            console.log(answers.product_list);
-
             let chosenItem = answers.product_list;
 
             inquirer.prompt([
