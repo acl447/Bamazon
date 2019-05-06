@@ -268,13 +268,6 @@ function addNewProduct() {
     ])
         .then(answers => {
 
-
-            let resultsArray = [];
-
-            resultsArray.push(answers.newName, answers.newDept, answers.newPrice, answers.initialQuantity);
-
-            console.log(resultsArray);
-
             connection.query("INSERT INTO products SET ?", {product_name: answers.newName, department_name: answers.newDept, 
             price: answers.newPrice, stock_quantity: answers.initialQuantity}, function(error, results, fields) {
 
@@ -286,7 +279,9 @@ function addNewProduct() {
 
                 else {
 
-                    connection.query("SELECT * FROM products WHERE product_name = " + answers.newName, function(error, results, fields) {
+                    let newProductID = results.insertId;
+
+                    connection.query("SELECT * FROM products WHERE item_id = " + newProductID, function(error, results, fields) {
 
                         if (error) {
 
@@ -296,18 +291,20 @@ function addNewProduct() {
 
                         else {
 
-                            console.log(results);
+                            console.log("Your new product has been added. \nID number: " + results[0].item_id + "\nProduct name: " + 
+                            results[0].product_name + "\nDepartment name: " + results[0].department_name + "\nPrice: $" + results[0].price + 
+                            "\nStock quantity: " + results[0].stock_quantity); 
                         }
 
 
 
-                    })
+                    }) 
                 }
 
 
 
 
-            })
+            }) 
 
         })
 

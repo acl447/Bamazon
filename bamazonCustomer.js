@@ -35,7 +35,7 @@ function showAllItems() {
 
     console.log("Welcome to Bamazon! Here are all of the items currently on sale: ");
 
-    connection.query("SELECT item_id, product_name, price FROM bamazon.products", function (error, results, fields) {
+    connection.query("SELECT item_id, product_name, price FROM products", function (error, results, fields) {
 
         if (error) {
 
@@ -95,6 +95,8 @@ function promptUser() {
                 }
 
                 else {
+
+                    console.log(results[0].stock_quantity);
 
                     if (results[0].stock_quantity >= answers.units) {
 
