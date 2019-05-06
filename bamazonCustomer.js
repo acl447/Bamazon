@@ -96,8 +96,6 @@ function promptUser() {
 
                 else {
 
-                    console.log(results[0].stock_quantity);
-
                     if (results[0].stock_quantity >= answers.units) {
 
                         let remainingQuantity = results[0].stock_quantity - answers.units;
