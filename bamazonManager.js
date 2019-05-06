@@ -294,6 +294,8 @@ function addNewProduct() {
                             console.log("Your new product has been added. \nID number: " + results[0].item_id + "\nProduct name: " + 
                             results[0].product_name + "\nDepartment name: " + results[0].department_name + "\nPrice: $" + results[0].price + 
                             "\nStock quantity: " + results[0].stock_quantity); 
+
+                            connection.end();
                         }
 
 
