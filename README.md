@@ -38,4 +38,8 @@ If you select "Add New Product", follow the prompts to add a completely new prod
 
 <img width="945" alt="Screen Shot 2019-05-07 at 6 51 32 PM" src="https://user-images.githubusercontent.com/44036798/57343676-2f0c1780-70f9-11e9-9e82-0521f76eb159.png">
 
+To make this app, I first created a database using MySQL Workbench and created a table full of product data inside the database. Next, I used the mysql package to create a connection to the database and the inquirer package to prompt the user to enter data. 
+
+Then, I used JavaScript and the mysql package to read and update the database and to display information to the user, depending on what the user has requested. For example, if the user is a customer who chooses an item to purchase, a JavaScript function will run, displaying the total cost of the user's purchase and updating the database to include the new stock quantity of the purchased item. 
+
 
