@@ -22,7 +22,7 @@ To start the app as a manager, type "node bamazonManager.js". You will see a set
 
 If you select "View Products for Sale", you will see a list of every available item -- the item IDs, names, prices, and quantities in stock:
 
-<img width="793" alt="Screen Shot 2019-05-06 at 12 13 58 PM" src="https://user-images.githubusercontent.com/44036798/57248916-78287280-6ff8-11e9-9f47-4cb476365250.png">
+<img width="623" alt="Screen Shot 2019-05-07 at 6 44 18 PM" src="https://user-images.githubusercontent.com/44036798/57343425-367ef100-70f8-11e9-8b03-2890ea964384.png">
 
 If you select "View Low Inventory", you will see a list of all items with an inventory count lower than five:
 
@@ -30,13 +30,12 @@ If you select "View Low Inventory", you will see a list of all items with an inv
 
 If you select "Add to Inventory", follow the prompts to add more of any item currently in the store:
 
+<img width="690" alt="Screen Shot 2019-05-07 at 6 47 48 PM" src="https://user-images.githubusercontent.com/44036798/57343554-a8efd100-70f8-11e9-9118-d4cca72d3721.png">
 
-<img width="628" alt="Screen Shot 2019-05-06 at 12 28 16 PM" src="https://user-images.githubusercontent.com/44036798/57249751-a313c600-6ffa-11e9-8f79-b98d8a77474d.png">
-
-<img width="695" alt="Screen Shot 2019-05-06 at 12 29 02 PM" src="https://user-images.githubusercontent.com/44036798/57249797-b7f05980-6ffa-11e9-9735-63eaa6f5f61b.png">
+<img width="692" alt="Screen Shot 2019-05-07 at 6 49 59 PM" src="https://user-images.githubusercontent.com/44036798/57343633-fc621f00-70f8-11e9-828a-2037e6287559.png">
 
 If you select "Add New Product", follow the prompts to add a completely new product to the store:
 
-<img width="835" alt="Screen Shot 2019-05-06 at 12 21 09 PM" src="https://user-images.githubusercontent.com/44036798/57249321-7c08c480-6ff9-11e9-916b-ac08a74c9df2.png">
+<img width="945" alt="Screen Shot 2019-05-07 at 6 51 32 PM" src="https://user-images.githubusercontent.com/44036798/57343676-2f0c1780-70f9-11e9-9e82-0521f76eb159.png">
 
 
