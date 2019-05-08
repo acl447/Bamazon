@@ -14,7 +14,7 @@ To start the app as a customer, type "node bamazonCustomer.js". You will see a l
 
 Follow the prompts to order an item and see the total cost of your purchase: 
 
-<img width="660" alt="Screen Shot 2019-05-06 at 12 08 58 PM" src="https://user-images.githubusercontent.com/44036798/57248743-fe908480-6ff7-11e9-92c4-e049118c74b3.png">
+<img width="499" alt="Screen Shot 2019-05-07 at 6 17 42 PM" src="https://user-images.githubusercontent.com/44036798/57342821-94f6a000-70f5-11e9-9422-69e3c1b0601c.png">
 
 To start the app as a manager, type "node bamazonManager.js". You will see a set of menu options: 
 
