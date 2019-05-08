@@ -10,10 +10,7 @@ Then, in your terminal/bash window:
 
 To start the app as a customer, type "node bamazonCustomer.js". You will see a list of all items in stock:
 
-
-
-
-
+<img width="608" alt="Screen Shot 2019-05-07 at 6 07 38 PM" src="https://user-images.githubusercontent.com/44036798/57342318-36302700-70f3-11e9-81e1-bca762f39bb2.png">
 
 Follow the prompts to order an item and see the total cost of your purchase: 
 

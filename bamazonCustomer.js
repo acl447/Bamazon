@@ -27,9 +27,11 @@ connection.connect(function (err) {
 
     showAllItems();
 
-    promptUser();
+    
 
-});
+})
+
+
 
 function showAllItems() {
 
@@ -48,20 +50,24 @@ function showAllItems() {
 
             console.log(results[i].item_id, results[i].product_name, "$" + results[i].price);
 
+
         };
 
-    })
+    });
 
+
+    
 };
 
-function promptUser() {
 
+
+function promptUser() {
 
 
     inquirer.prompt([{
         type: "input",
         name: "ID",
-        message: "What is the ID of the product you would like to buy?",
+        message: "What is the ID of the product you would like to buy?\n",
         validate: function (value) {
             if (isNaN(value) === false) {
                 return true;
@@ -86,7 +92,7 @@ function promptUser() {
             let chosenProductID = answers.ID;
 
             connection.query("SELECT stock_quantity FROM products WHERE item_id = " + chosenProductID, function (error, results, fields) {
-
+                
                 if (error) {
 
                     console.log(error);
@@ -95,14 +101,14 @@ function promptUser() {
                 }
 
                 else {
-
+                    
                     if (results[0].stock_quantity >= answers.units) {
 
                         let remainingQuantity = results[0].stock_quantity - answers.units;
-
-                        connection.query("UPDATE products SET stock_quantity = " + remainingQuantity, function (error, results, fields) {
-
-
+                        
+                        connection.query("UPDATE bamazon.products SET ? WHERE ?", [{stock_quantity: remainingQuantity}, {item_id: chosenProductID}], function (error, results, fields) {
+                            
+                            
                             if (error) {
 
                                 console.log(error);
@@ -112,8 +118,7 @@ function promptUser() {
                             else {
 
                                 connection.query("SELECT price FROM products WHERE item_id = " + answers.ID, function (error, results, fields) {
-
-
+                                    
                                     if (error) {
 
                                         console.log(error);
@@ -150,5 +155,8 @@ function promptUser() {
 
         });
 
-}
+};
 
+
+
+promptUser();
